@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Juros Compostos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+
+        <h2>Ciclic</h2>
+
+    </header>
+
+    <main class="main01">
+
+        <div class="mainWrapper">
+
+            <h3>Simulador</h3>
+
+            <form id="formSubmit" action="#" method="post">
+
+                <label for="name">
+                    Nome: 
+                    <input type="text" name="name" id="name">
+                    <span class="error"></span>
+                </label>
+
+                <label for="monthly">
+                    Mensalidade: 
+                    <input type="text" name="monthly" id="monthly">
+                    <span class="error"></span>
+                </label>
+
+                <label for="rate">
+                    Taxa de juros: 
+                    <input type="text" name="rate" id="rate">
+                    <span class="error"></span>
+                </label>
+
+                <label for="period">
+                    Tempo de contribuição: 
+                    <select name="period" id="period">
+
+                        <option value="year_01">1 ano</option>
+
+                        <option value="year_02">2 ano</option>
+
+                        <option value="year_03">3 ano</option>
+
+                        <option value="year_04">4 ano</option>
+
+                        <option value="year_05">5 ano</option>
+
+                        <option value="year_06">6 ano</option>
+                    </select>
+                    <span class="error"></span>
+                </label>
+
+                <button class="submitButton" type="submit">Simular</button>
+
+            </form>
+
+        </div>
+
+    </main>
+
+    <main class="main02">
+
+        <div class="mainWrapper">
+    
+            <div class="result">
+    
+                <p>Olá ${resultado.nome}, investindo R$ ${resultado.mensalidade} todo mês, você terá R$ ${resultado.result} em ${resultado.tempo} sob uma taxa de juros de ${resultado.rate} ao mês.</p>
+    
+            </div>
+    
+            <button class="submitButton" type="submit">Simular novamente</button>
+
+        </div>
+
+    </main>
+
+
+<script src="js/script.js"></script>    
+</body>
+</html>

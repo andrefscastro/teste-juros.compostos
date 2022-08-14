@@ -1,0 +1,174 @@
+$color-primary: #ffebcd;
+$color-secondary: #5f9ea0;
+$color-terciary: #f0ffff;
+$mainFont: 'Poppins', sans-serif;
+$padding: 40px 10px;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    background-color: $color-primary;
+    color: $color-secondary;
+    font-family: $mainFont;
+    padding: $padding;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.header {
+    width: 100%;
+    max-width: 600px;
+    background-color: $color-terciary;
+    text-align: center;
+    font-size: 28px;
+    box-shadow: 0 2px 7px black;
+    border-radius: 4px;
+}
+
+.main01 {
+    width: 100%;
+    max-width: 600px;
+    background-color: $color-terciary;
+    margin-top: 20px;
+    box-shadow: 0 2px 7px black;
+    padding: 30px 20px;
+    border-radius: 4px;
+
+    .mainWrapper {
+        width: 100%;
+
+        h3 {
+            font-size: 26px;
+            margin-bottom: 40px;
+        }
+        
+        form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            
+            label {
+                width: 100%;
+                font-size: 16px;
+
+                input {
+                    width: 100%;
+                    height: 30px;
+                    outline: none;
+                    border-radius: 4px;
+                    border: 1px solid $color-secondary;
+                    margin: 10px 0 20px 0;
+                    font-size: 18px;
+                    color: $color-secondary;
+                    padding: 2px 4px;
+
+                    &:focus {
+                        box-shadow: 0 0 8px $color-secondary;
+                    }
+
+                    &::placeholder {
+                        font-size: 14px;
+                    }
+                }
+
+                select {
+                    width: 80px;
+                    height: 30px;
+                    border-radius: 4px;
+                    border: 1px solid $color-secondary;
+                    color: $color-secondary;
+                    margin-bottom: 20px;
+                    margin-left: 10px;
+                    outline: none;
+
+                    &:focus {
+                        box-shadow: 0 0 8px $color-secondary;
+                    }
+                }
+
+            }
+
+            .inputError {
+                border: 1px solid red;
+                animation: shake 1s;
+
+                &::placeholder {
+                    color: red;
+                }
+
+                @keyframes shake {
+                    
+                    20% {margin-left: -2px;}
+                    40% {margin-left: 2px;}
+                    60% {margin-left: -2px;}
+                    80% {margin-left: 2px;}
+                    100% {margin-left: 0;}
+                }
+            }
+
+            .submitButton {
+                width: 100%;
+                height: 40px;
+                border-radius: 4px;
+                background-color: $color-secondary;
+                color: $color-terciary;
+                border: none;
+                font-size: 24px;
+                cursor: pointer;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
+
+.main02 {
+    width: 100%;
+    max-width: 600px;
+    background-color: $color-terciary;
+    margin-top: 20px;
+    box-shadow: 0 2px 7px black;
+    padding: 30px 15px;
+    border-radius: 4px;
+    display: none;
+
+    .mainWrapper {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        
+        p {
+            font-size: 18px;
+            line-height: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .submitButton {
+            width: 100%;
+            height: 40px;
+            border-radius: 4px;
+            background-color: $color-secondary;
+            color: $color-terciary;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
