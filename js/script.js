@@ -1,18 +1,38 @@
 /**calculating rate with API */
 
-async function getContent() {
 
 
-    try {
-        const response = await fetch('http://api.mathjs.org/v4/')
 
-        const data = await response.json()
-        
-    } catch (error) {
-        console.log(error)
-    }
+
+
+const configs = {
+    method: 'POST',
+    headers: {'content-type: application/json'},
+    body: { "expr": '[valor da mensalidade] * (((1 + [taxa de juros]) ^ [tempo de contribuicao em meses] - 1) / [taxa de juros])' }
 }
 
+clickButton.onclick = () => fetch('http://api.mathjs.org/v4/', configs).then(showResult).catch(showError)
+
+
+/**Show on the screen */
+
+function showScreen(expr) {
+    let output = ''
+
+    for(let resultado of expr) {
+        output += `
+            <div class="result">
+    
+                <p>Olá ${resultado.nome}, investindo R$ ${resultado.mensalidade} todo mês, você terá R$ ${resultado.result} em ${resultado.tempo} sob uma taxa de juros de ${resultado.rate} ao mês.</p>
+    
+            </div>
+
+        `
+    }
+
+    document.querySelector('.resultText').innerHTML = output
+
+}
 
 
 /** Validating Form */
